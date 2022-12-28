@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>email_verification</title>
+</head>
+<body>
+<h1>Hello {{ name }},Please verify your email</h1>
+<form method="post" action="email_verified/{{ name }}">{% csrf_token %}
+    <input type="text" name="mail_otp" placeholder="Enter your otp"><br>
+    <input type="submit">
+
+</form>
+<br><br>
+{% if retrive %}
+<p>Your password is:- <b>{{ password }}</b></p>
+{% endif %}
+</body>
+</html>

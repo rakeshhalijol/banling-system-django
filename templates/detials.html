@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>detials</title>
+</head>
+<body>
+<h1>Hello,{{ data.username }} <a href="notifications">My Notifications.</a> </h1> <br><br>
+
+<h3>Trnasaction</h3>
+<div>
+        {% for msg in messages %}
+        <h3>{{ msg }}...</h3>
+        {% endfor %}
+    </div><br>
+
+<div>Delete my account <a href="delete/{{ data.id }}">Delete</a>.</div><br><br><br>
+
+<div>balance:-<b>{{ amount.amount }}</b></div> <br><br><br>
+
+<form method="post" action="transactions/{{ data.id }}">
+    {% csrf_token %}
+    <input type="text" name="reciver" placeholder="enter user to whom you want to send money"> <br>
+    <input type="number" name="money" placeholder="enter money you want"> <br>
+    <input type="password" name="p" placeholder="Enter Your password"> <br>
+    <input type="submit" value="Submit">
+</form>
+</body>
+</html>
