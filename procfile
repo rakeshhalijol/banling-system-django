@@ -1,0 +1,2 @@
+release: python manage.py migrate
+web: guniorn bank.wsgi --log-file=-
